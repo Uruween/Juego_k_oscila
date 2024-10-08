@@ -5,15 +5,14 @@ using UnityEngine;
 
 public class Fruta : MonoBehaviour
 {
-    private Animator satoru;
-    void Start()
-    {
-        satoru = GetComponent<Animator>();
-    }
+    [SerializeField] private GameObject tontostodos;
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        satoru.SetTrigger("Fruta");
+        if (other.CompareTag("Player")) 
+        {
+            Instantiate(tontostodos, transform.position, Quaternion.identity);
+            Destroy(gameObject);
+        }
     }
-
 }
