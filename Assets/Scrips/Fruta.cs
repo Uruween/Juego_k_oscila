@@ -5,14 +5,21 @@ using UnityEngine;
 
 public class Fruta : MonoBehaviour
 {
-    [SerializeField] private GameObject tontostodos;
-
+    public Animator satoruGojo;
+    [SerializeField] int score;
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player")) 
         {
-            Instantiate(tontostodos, transform.position, Quaternion.identity);
-            Destroy(gameObject);
+            SimulationManager.Instance.score.AddScore(score);
+            Collect();
         }
     }
+
+    void Collect () 
+    {
+        satoruGojo.SetTrigger("tocaFruta");
+        Destroy(gameObject, 0.65f);
+    }
 }
+ 

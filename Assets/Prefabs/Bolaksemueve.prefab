@@ -346,6 +346,8 @@ GameObject:
   m_Component:
   - component: {fileID: 2227273758665581127}
   - component: {fileID: 4853493268266159690}
+  - component: {fileID: 4265096085207507677}
+  - component: {fileID: 7722733958375198816}
   m_Layer: 0
   m_Name: Bolaksemueve
   m_TagString: Untagged
@@ -388,7 +390,55 @@ MonoBehaviour:
   Velocidad: 5
   puntosDeMovimiento:
   - {fileID: 0}
-  rotationVelocity: 500
+  rotationVelocity: 345
+--- !u!114 &4265096085207507677
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5367006355001412379}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d96290b9ec5cd0e4db06f2f2a82024b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DMG: 50
+--- !u!58 &7722733958375198816
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5367006355001412379}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.031495333, y: -2.1794438}
+  serializedVersion: 2
+  m_Radius: 0.6700721
 --- !u!1 &6933524617902219433
 GameObject:
   m_ObjectHideFlags: 0

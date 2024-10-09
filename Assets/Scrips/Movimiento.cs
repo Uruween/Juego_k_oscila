@@ -19,15 +19,21 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private bool suelo;
     private bool salto = false;
 
+    private Animator satoru;
+
     // Start is called before the first frame update
     void Start()
     {
         rigid = GetComponent<Rigidbody2D>();
+        satoru = GetComponent<Animator>();
     }
 
     void Update()
     {
         movimientoHorizontal = Input.GetAxisRaw("Horizontal") * velocidadMovimiento;
+
+        satoru.SetFloat("Velocidad", Mathf.Abs(movimientoHorizontal)); // Mathf.Abs para sacar siempre numeros positivos sin importar la dirección
+        satoru.SetFloat("VelocidadY", rigid.velocity.y);
         if (Input.GetKeyDown(KeyCode.Space))
         {
             salto = true;
@@ -37,14 +43,15 @@ public class PlayerMovement : MonoBehaviour
     public void FixedUpdate()
     {
         suelo = Physics2D.OverlapBox(detector.position, cajaSuelo, 0f, capita);
+        satoru.SetBool("enSuelo", suelo);
         mover(movimientoHorizontal * Time.deltaTime, salto);
         salto = false;
     }
     private void mover(float mover, bool salto)
     {
         Vector3 velocidadObjetivo = new Vector2(mover, rigid.velocity.y);
-        rigid.velocity = Vector3.SmoothDamp(rigid.velocity, velocidadObjetivo, ref velocidad, suavizado); 
-                                                                                                          
+        rigid.velocity = Vector3.SmoothDamp(rigid.velocity, velocidadObjetivo, ref velocidad, suavizado); //El smothdamp da suavizado a la hora de frenar o acelerar al personaje
+                                                                                                          //(Teniendo en cuenta la velocidad actual, la velocidad que queremos llegar y q tan rapido)
         if (mover > 0 && !lookingTo)
         {
             Girar();
@@ -75,3 +82,5 @@ public class PlayerMovement : MonoBehaviour
     }
 
 }
+
+    
