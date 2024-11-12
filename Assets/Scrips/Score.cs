@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -16,5 +17,10 @@ public class Score : MonoBehaviour
         {
             currentScore = 0;
         }
+    }
+
+    internal void Sumarpuntos(int puntosRecolectados)
+    {
+        throw new NotImplementedException();
     }
 }

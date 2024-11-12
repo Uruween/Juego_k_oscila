@@ -157,6 +157,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   satoruGojo: {fileID: 6403253088118538715}
+  score: 0
 --- !u!114 &1604833622127205270
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -169,4 +170,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d822a6d317e2d03479f00cb1dd116643, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Heal: 15
+  Heal: 1
